@@ -12,6 +12,9 @@
   <style>
     .paper{max-width:760px}.memory-photo{aspect-ratio:.8;margin:0;position:relative;overflow:hidden;background:#261a38}.memory-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}.memory-photo:hover img{transform:scale(1.06)}.memory-photo span{position:absolute;top:12px;left:12px;width:26px;height:26px;display:grid;place-items:center;background:#111a;color:#fff;font-size:.65rem;border:1px solid #fff7;border-radius:50%}.song{padding-top:55px}.song-card{display:flex;max-width:720px;margin:45px auto 0;overflow:hidden;border:1px solid #ffffff25;background:#ffffff0a;text-decoration:none;color:var(--ink);text-align:left}.song-card iframe{width:100%;aspect-ratio:16/9;border:0}.song-card:focus-visible{outline:2px solid var(--gold);outline-offset:4px}@media(max-width:680px){.memory-photo{aspect-ratio:.72}.song{padding-top:20px}}
   </style>
+  <style>
+    .song-featured{max-width:1240px;padding-top:70px;padding-bottom:115px}.song-featured h2{font-size:clamp(3rem,6.5vw,5.6rem)}.song-card{max-width:1060px;margin:46px auto 0;padding:10px;background:linear-gradient(135deg,#f7cb7c,#fa99af 47%,#8f71b7);border-radius:20px;box-shadow:0 28px 80px #000a;position:relative}.song-card:before{content:"A little song for Hema  ♥";position:absolute;z-index:1;top:25px;left:27px;padding:8px 12px;border-radius:99px;background:#0a0a1bcc;color:#fff;font:700 .66rem "DM Sans",sans-serif;letter-spacing:.12em;text-transform:uppercase;pointer-events:none}.song-card video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#000;border-radius:12px}.song-card video:focus-visible{outline:3px solid #fff;outline-offset:-6px}@media(max-width:680px){.song-featured{padding-top:42px;padding-bottom:75px}.song-card{margin-top:30px;padding:5px;border-radius:12px}.song-card:before{top:15px;left:15px;font-size:.55rem;padding:6px 8px}.song-card video{border-radius:8px}}
+  </style>
 </head>
 <body>
   <div class="stars" aria-hidden="true"></div>
@@ -32,7 +35,7 @@
       <p class="eyebrow">a song for you</p>
       <h2>Press play and<br><em>think of us</em></h2>
       <div class="song-card">
-        <video autoplay loop playsinline controls preload="auto" style="width:100%;aspect-ratio:16/9;display:block;background:#000" aria-label="Anyone by Justin Bieber, for Hema">
+        <video autoplay loop playsinline controls preload="auto" controlsList="nodownload noremoteplayback" disablePictureInPicture aria-label="Anyone by Justin Bieber, for Hema">
           <source src="assets/hema-birthday-song.mp4" type="video/mp4">
           Your browser does not support this birthday video.
         </video>
