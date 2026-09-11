@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0b24">
+  <title>Happy Birthday, Hema ✨</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+  <div class="hearts" aria-hidden="true"></div>
+  <header><a class="brand" href="#top">for Hema <span>♥</span></a><button class="sound" id="sound" aria-label="Toggle ambient chime">♫ <span>sound off</span></button></header>
+  <main id="top">
+    <section class="hero reveal">
+      <p class="eyebrow">a little corner of the universe, made for you</p>
+      <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+      <div class="moon">✦</div>
+      <p class="script">Happy Birthday</p>
+      <h1>Hema</h1>
+      <p class="hero-copy">May your year be full of soft mornings, loud laughter,<br>and every beautiful thing you deserve.</p>
+      <a href="#letter" class="scroll-cue">open your gift <b>↓</b></a>
+    </section>
+
+    <section class="letter section" id="letter">
+      <p class="eyebrow">my heart, in a few words</p>
+      <h2>A birthday note<br>for <em>you</em></h2>
+      <article class="paper">
+        <span class="seal">H</span>
+        <p>Dear Hema,</p>
+        <p>Today is a little reminder of how lucky the world is to have you in it. You have a way of making ordinary moments feel warmer — with your kindness, your strength, and that light you carry so naturally.</p>
+        <p>I hope this next chapter brings you the kind of happiness that stays: the people who see you, the dreams that excite you, and quiet moments that make you feel completely at home.</p>
+        <p>Keep being wonderfully, unmistakably you. There is no one else quite like you.</p>
+        <p class="signed">With all my love,<br><span>Someone who is cheering for you</span></p>
+      </article>
+    </section>
+
+    <section class="section reasons">
+      <p class="eyebrow">just a few reasons</p>
+      <h2>Why you are<br><em>so lovely</em></h2>
+      <div class="reason-grid">
+        <article><b>01</b><span>✦</span><h3>Your kindness</h3><p>The way you care leaves a little sunshine everywhere.</p></article>
+        <article><b>02</b><span>☾</span><h3>Your quiet strength</h3><p>You meet the world with a courage that is entirely your own.</p></article>
+        <article><b>03</b><span>♡</span><h3>Your bright spirit</h3><p>You make the people around you feel lighter and more alive.</p></article>
+      </div>
+    </section>
+
+    <section class="section memories">
+      <p class="eyebrow">little places to hold close</p>
+      <h2>Moments worth<br><em>remembering</em></h2>
+      <p class="hint">Tap a card to uncover its note.</p>
+      <div class="memory-grid">
+        <button class="memory coral"><span>01</span><strong>the giggles</strong><i>Every laugh with you is a favourite sound.</i></button>
+        <button class="memory gold"><span>02</span><strong>the little things</strong><i>The small moments always become the big ones.</i></button>
+        <button class="memory lavender"><span>03</span><strong>your sparkle</strong><i>You make even an ordinary day feel special.</i></button>
+        <button class="memory blue"><span>04</span><strong>new adventures</strong><i>Here is to all the lovely places still ahead.</i></button>
+      </div>
+    </section>
+
+    <section class="section open-when">
+      <p class="eyebrow">keep these for later</p>
+      <h2>Open when you<br>need a <em>little love</em></h2>
+      <div class="envelopes">
+        <button class="envelope" data-letter="You are more capable than you feel today. Take one small step, then another — you have always found your way."><span>☀</span><b>you need courage</b><small>open →</small></button>
+        <button class="envelope" data-letter="The gentlest thing you can do is pause. Rest is not falling behind; it is making room for yourself."><span>☾</span><b>you need calm</b><small>open →</small></button>
+        <button class="envelope" data-letter="Somebody somewhere is grateful for your exact laugh, your exact heart, and the space you take up in their world."><span>✦</span><b>you feel unseen</b><small>open →</small></button>
+      </div>
+    </section>
+
+    <section class="surprise section">
+      <p class="eyebrow">one last thing</p>
+      <h2>A wish for <em>Hema</em></h2>
+      <button id="surprise" class="gift"><span class="ribbon"></span><span>🎁</span><b>tap to unwrap</b></button>
+      <div class="wish" id="wish" aria-live="polite"><span>✦</span><p>May this year surprise you<br>with <em>beautiful things.</em></p><small>Happy birthday, Hema ♥</small></div>
+    </section>
+  </main>
+  <footer>made with love, just for you <span>♥</span></footer>
+  <dialog id="modal"><button class="close" aria-label="Close">×</button><span class="modal-star">✦</span><p id="modal-text"></p></dialog>
+  <script src="app.js"></script>
+</body>
+</html>
