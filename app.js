@@ -22,6 +22,22 @@ document.querySelector('#surprise').addEventListener('click', event => {
   }
 });
 
+const birthdayVideo = document.querySelector('#birthday-video');
+const videoToggle = document.querySelector('#video-toggle');
+if (birthdayVideo && videoToggle) {
+  const syncVideoButton = () => {
+    const paused = birthdayVideo.paused;
+    videoToggle.textContent = paused ? '▶' : 'Ⅱ';
+    videoToggle.setAttribute('aria-label', paused ? 'Play video' : 'Pause video');
+  };
+  videoToggle.addEventListener('click', () => {
+    if (birthdayVideo.paused) birthdayVideo.play(); else birthdayVideo.pause();
+  });
+  birthdayVideo.addEventListener('play', syncVideoButton);
+  birthdayVideo.addEventListener('pause', syncVideoButton);
+  syncVideoButton();
+}
+
 let audioContext;
 document.querySelector('#sound').addEventListener('click', event => {
   const label = event.currentTarget.querySelector('span');
