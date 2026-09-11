@@ -25,22 +25,28 @@ document.querySelector('#surprise').addEventListener('click', event => {
 const birthdayVideo = document.querySelector('#birthday-video');
 const videoToggle = document.querySelector('#video-toggle');
 if (birthdayVideo && videoToggle) {
+  const songCard = birthdayVideo.closest('.song-card');
   const syncVideoButton = () => {
     const paused = birthdayVideo.paused;
-    videoToggle.textContent = birthdayVideo.muted ? '♪' : (paused ? '▶' : 'Ⅱ');
+    songCard.classList.toggle('needs-sound', birthdayVideo.muted);
+    videoToggle.textContent = birthdayVideo.muted ? '♪ sound' : (paused ? '▶' : 'Ⅱ');
     videoToggle.setAttribute('aria-label', birthdayVideo.muted ? 'Turn on sound' : (paused ? 'Play video' : 'Pause video'));
   };
+  const enableSound = () => {
+    if (!birthdayVideo.muted) return;
+    birthdayVideo.muted = false;
+    birthdayVideo.volume = .85;
+    birthdayVideo.play();
+  };
   videoToggle.addEventListener('click', () => {
-    if (birthdayVideo.muted) {
-      birthdayVideo.muted = false;
-      birthdayVideo.volume = .85;
-      birthdayVideo.play();
-    } else if (birthdayVideo.paused) birthdayVideo.play(); else birthdayVideo.pause();
+    if (birthdayVideo.muted) enableSound(); else if (birthdayVideo.paused) birthdayVideo.play(); else birthdayVideo.pause();
   });
   birthdayVideo.addEventListener('play', syncVideoButton);
   birthdayVideo.addEventListener('pause', syncVideoButton);
   birthdayVideo.addEventListener('volumechange', syncVideoButton);
   birthdayVideo.play().catch(() => {});
+  document.addEventListener('pointerdown', enableSound, { once: true });
+  document.addEventListener('keydown', enableSound, { once: true });
   syncVideoButton();
 }
 
