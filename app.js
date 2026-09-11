@@ -27,14 +27,20 @@ const videoToggle = document.querySelector('#video-toggle');
 if (birthdayVideo && videoToggle) {
   const syncVideoButton = () => {
     const paused = birthdayVideo.paused;
-    videoToggle.textContent = paused ? '▶' : 'Ⅱ';
-    videoToggle.setAttribute('aria-label', paused ? 'Play video' : 'Pause video');
+    videoToggle.textContent = birthdayVideo.muted ? '♪' : (paused ? '▶' : 'Ⅱ');
+    videoToggle.setAttribute('aria-label', birthdayVideo.muted ? 'Turn on sound' : (paused ? 'Play video' : 'Pause video'));
   };
   videoToggle.addEventListener('click', () => {
-    if (birthdayVideo.paused) birthdayVideo.play(); else birthdayVideo.pause();
+    if (birthdayVideo.muted) {
+      birthdayVideo.muted = false;
+      birthdayVideo.volume = .85;
+      birthdayVideo.play();
+    } else if (birthdayVideo.paused) birthdayVideo.play(); else birthdayVideo.pause();
   });
   birthdayVideo.addEventListener('play', syncVideoButton);
   birthdayVideo.addEventListener('pause', syncVideoButton);
+  birthdayVideo.addEventListener('volumechange', syncVideoButton);
+  birthdayVideo.play().catch(() => {});
   syncVideoButton();
 }
 
