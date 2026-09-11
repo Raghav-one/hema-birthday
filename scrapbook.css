@@ -1,6 +1,21 @@
 /* Focused additions for the personal memory wall and requested content. */
 .paper .signed { margin-top: 32px; text-align: right; font-family: "Great Vibes"; font-size: 2rem; line-height: 1.1; }
 
+/* A soft entrance makes the first screen feel like an opened gift. */
+.hero > :not(.orbit) { animation: hero-enter .8s both; }
+.hero .eyebrow { animation-delay: .08s; }.hero .moon { animation-delay: .16s; animation-name: hero-enter, moon-glow; animation-duration: .8s, 3.8s; animation-delay: .16s, 1.05s; animation-iteration-count: 1, infinite; }
+.hero .script { animation-delay: .27s; }.hero h1 { animation-delay: .39s; }.hero-copy { animation-delay: .51s; }.hero .scroll-cue { animation-delay: .63s; }
+.hero .orbit-one { animation: orbit-float 9s ease-in-out infinite; }.hero .orbit-two { animation: orbit-float 12s ease-in-out -4s infinite reverse; }
+@keyframes hero-enter { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes moon-glow { 50% { box-shadow: 0 0 78px #ff9bb592; transform: translateY(-5px) scale(1.035); } }
+@keyframes orbit-float { 50% { margin-top: -13px; } }
+
+.letter-open { display: inline-flex; align-items: center; justify-content: center; gap: 9px; margin: 35px auto 0; padding: 14px 21px; border: 1px solid #f8cd7b80; border-radius: 99px; background: #ffffff0a; color: var(--ink); font: 500 .82rem "DM Sans", sans-serif; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; transition: transform .2s ease, background .2s ease, border-color .2s ease; }
+.letter-open[hidden] { display: none; }
+.letter-open span { color: #ffc3cc; font-size: 1.25rem; }.letter-open:hover { transform: translateY(-3px); background: #ffffff12; border-color: #f8cd7b; }
+.letter:not(.is-open) .paper { display: none; }.letter.is-open .paper { animation: letter-open .7s both; }
+@keyframes letter-open { from { opacity: 0; transform: translateY(20px) rotate(-2deg) scale(.98); } to { opacity: 1; transform: rotate(-1deg) scale(1); } }
+
 .reason-grid { grid-template-columns: repeat(4, 1fr); }
 
 .memory-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 25px 17px; margin: 48px auto 0; max-width: 1000px; align-items: start; }
@@ -19,4 +34,7 @@
   .memory-photo { border-width: 8px; border-bottom-width: 31px; }
   .memory-photo figcaption { left: 5px; right: 5px; bottom: -24px; font-size: .83rem; }
   .memory-photo:nth-child(3n + 1)::before { width: 48px; height: 17px; top: -14px; }
+  .letter-open { margin-top: 28px; font-size: .72rem; }
 }
+
+@media (prefers-reduced-motion: reduce) { .hero > *, .hero .orbit-one, .hero .orbit-two, .letter.is-open .paper { animation: none !important; } }

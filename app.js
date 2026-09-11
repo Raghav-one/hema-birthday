@@ -9,6 +9,17 @@ document.querySelectorAll('.envelope').forEach(letter => letter.addEventListener
 document.querySelector('.close').addEventListener('click', () => modal.close());
 modal.addEventListener('click', event => { if (event.target === modal) modal.close(); });
 
+const letter = document.querySelector('.letter');
+const letterOpen = document.querySelector('#letter-open');
+if (letter && letterOpen) {
+  letterOpen.addEventListener('click', () => {
+    letter.classList.add('is-open');
+    letterOpen.setAttribute('aria-expanded', 'true');
+    letterOpen.hidden = true;
+    letter.querySelector('.paper').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+}
+
 document.querySelector('#surprise').addEventListener('click', event => {
   event.currentTarget.setAttribute('aria-hidden', 'true');
   event.currentTarget.style.display = 'none';
