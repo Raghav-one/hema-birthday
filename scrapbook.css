@@ -1,0 +1,22 @@
+/* Focused additions for the personal memory wall and requested content. */
+.paper .signed { margin-top: 32px; text-align: right; font-family: "Great Vibes"; font-size: 2rem; line-height: 1.1; }
+
+.reason-grid { grid-template-columns: repeat(4, 1fr); }
+
+.memory-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 25px 17px; margin: 48px auto 0; max-width: 1000px; align-items: start; }
+.memory-photo { position: relative; margin: 0; aspect-ratio: auto; overflow: visible; background: #fff8ec; border: 10px solid #fff8ec; border-bottom-width: 36px; border-radius: 3px; box-shadow: 0 13px 25px #0008; transform: rotate(-2deg); transition: transform .25s ease, box-shadow .25s ease; }
+.memory-photo:nth-child(2n) { transform: rotate(2.2deg); }
+.memory-photo:nth-child(3n) { transform: rotate(-.7deg); }
+.memory-photo:nth-child(4n) { transform: rotate(3.1deg); }
+.memory-photo:nth-child(5n) { transform: rotate(-3.3deg); }
+.memory-photo:hover { transform: translateY(-7px) rotate(0deg); box-shadow: 0 20px 32px #000a; z-index: 2; }
+.memory-photo img { display: block; width: 100%; height: auto; aspect-ratio: .84; object-fit: cover; border-radius: 2px; filter: saturate(.92) contrast(.98); }
+.memory-photo figcaption { position: absolute; left: 9px; right: 9px; bottom: -27px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-align: center; color: #7e6570; font: 1rem/1 "Great Vibes"; }
+.memory-photo:nth-child(3n + 1)::before { content: ""; position: absolute; z-index: 1; top: -17px; left: 50%; width: 58px; height: 21px; transform: translateX(-50%) rotate(-3deg); background: linear-gradient(135deg, #f4bfcae6, #f8d9a9e6); box-shadow: 0 1px 3px #0002; }
+
+@media (max-width: 680px) {
+  .reason-grid, .memory-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .memory-photo { border-width: 8px; border-bottom-width: 31px; }
+  .memory-photo figcaption { left: 5px; right: 5px; bottom: -24px; font-size: .83rem; }
+  .memory-photo:nth-child(3n + 1)::before { width: 48px; height: 17px; top: -14px; }
+}
