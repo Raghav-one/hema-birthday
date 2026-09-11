@@ -45,7 +45,9 @@ if (birthdayVideo && videoToggle) {
   birthdayVideo.addEventListener('pause', syncVideoButton);
   birthdayVideo.addEventListener('volumechange', syncVideoButton);
   birthdayVideo.play().catch(() => {});
-  document.addEventListener('pointerdown', enableSound, { once: true });
+  document.addEventListener('pointerdown', event => {
+    if (!videoToggle.contains(event.target)) enableSound();
+  }, { once: true });
   document.addEventListener('keydown', enableSound, { once: true });
   syncVideoButton();
 }
